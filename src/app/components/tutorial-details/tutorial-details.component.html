@@ -1,0 +1,71 @@
+<div *ngIf="currentStoryPointEntry" class="edit-form">
+    <h4>Story Point Entry</h4>
+    <form>
+        <div class="form-group">
+            <label for="associate">Associate</label>
+            <input
+                type="text"
+                class="form-control"
+                id="associate"
+                [(ngModel)]="currentStoryPointEntry.associate"
+                name="associate"
+            />
+        </div>
+        <div class="form-group">
+            <label for="storyNumber">StoryNumber</label>
+            <input
+                type="text"
+                class="form-control"
+                id="storyNumber"
+                [(ngModel)]="currentStoryPointEntry.storyNumber"
+                name="storyNumber"
+            />
+        </div>
+        <div class="form-group">
+            <label for="release">Release</label>
+            <input
+                type="number"
+                class="form-control"
+                id="release"
+                [(ngModel)]="currentStoryPointEntry.release"
+                name="release"
+            />
+        </div>
+        <div class="form-group">
+            <label for="storyPoints">StoryPoints</label>
+            <input
+                type="number"
+                class="form-control"
+                id="storyPoints"
+                [(ngModel)]="currentStoryPointEntry.storyPoints"
+                name="storyPoints"
+            />
+        </div>
+    </form>
+
+    <button 
+        class="badge badge-danger mr-2" (click)="deleteTutorial()">
+        Delete
+    </button>
+
+    <button type="submit" class="badge badge-success" (click)="updateTutorial()">
+        Update
+    </button>
+    <p> {{ message }} </p>
+
+
+    <div *ngIf="submitted">
+        <h4>Data modified successfully!</h4>
+    </div>
+
+</div>
+
+<div *ngIf = "!currentStoryPointEntry">
+    <br />
+    <p>Cannot access this Story Point Entry...</p>
+</div>
+
+        
+
+
+
